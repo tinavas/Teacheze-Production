@@ -1,0 +1,30 @@
+/* Webform theming */
+.webform{
+position:relative;
+bottom:17px;
+left:15px;
+background: url("/sites/ulearn.ie/files/image/Webform/webform-bkgrnd.png") no-repeat scroll 0 top;
+}
+.subject-w
+{
+position: relative;
+top: 36px;
+left: 16px;
+  color: #FFFFFF;
+}
+
+.webform-client-form-997{
+position:relative;
+float:left;
+}
+
+/* Shadow the Webform fields*/
+.input{  
+box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+}  
+
+.webform-content{
+  color: #FFFFFF;
+}

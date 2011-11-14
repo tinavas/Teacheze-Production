@@ -1,0 +1,28 @@
+.divform{
+	width:50%;
+	float:left;
+}
+
+.divprice{
+	width:50%;
+	float:left;
+}
+
+#edit-startdate-datepicker-popup-0
+{
+	background:#FFFFFF url(../../images/calendar.png) no-repeat scroll 100% 0;
+}
+
+#edit-enddate-datepicker-popup-0
+{
+	background:#FFFFFF url(../../images/calendar.png) no-repeat scroll 100% 0;
+}
+#edit-startdate-accomodation-datepicker-popup-0
+{
+	background:#FFFFFF url(../../images/calendar.png) no-repeat scroll 100% 0;
+}
+
+#edit-enddate-accomodation-datepicker-popup-0
+{
+	background:#FFFFFF url(../../images/calendar.png) no-repeat scroll 100% 0;
+}

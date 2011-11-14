@@ -1,0 +1,22 @@
+<?php
+// $Id: coursebooking.install,v 1.6 2010/01/21 13:11:10 vectoroc Exp $
+ 
+
+
+function coursebooking_install() {
+		switch ($GLOBALS['db_type']) {
+		case 'mysql':
+		case 'mysqli':
+		$result = db_query("CREATE TABLE {bookcourse} (
+id INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+user_id INT( 11 ) NOT NULL ,
+course_code VARCHAR( 255 ) NOT NULL ,
+start_datetime DATETIME NOT NULL ,
+end_datetime DATETIME NOT NULL
+) ENGINE = MYISAM");
+		break;
+		}
+		drupal_set_message(t('Coursebooking table installed successfully'));
+}
+ 
+ 

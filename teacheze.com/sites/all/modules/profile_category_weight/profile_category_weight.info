@@ -1,0 +1,11 @@
+; $Id: profile_category_weight.info,v 1.2.2.1 2008/12/09 18:44:50 hanoii Exp $
+
+name = Profile Category Weight
+description = Assign weight to profile categories.
+core = 6.x
+; Information added by drupal.org packaging script on 2009-05-06
+version = "6.x-1.1"
+core = "6.x"
+project = "profile_category_weight"
+datestamp = "1241643411"
+

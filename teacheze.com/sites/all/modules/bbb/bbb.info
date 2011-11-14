@@ -1,0 +1,12 @@
+; $Id: bbb.info,v 1.2 2010/03/11 16:09:05 sanduhrs Exp $
+name = Big Blue Button API
+description = Enables universities and colleges to deliver a high-quality learning experience.
+package = Big Blue Button
+core = 6.x
+
+; Information added by drupal.org packaging script on 2010-03-15
+version = "6.x-1.0-beta1"
+core = "6.x"
+project = "bbb"
+datestamp = "1268681104"
+

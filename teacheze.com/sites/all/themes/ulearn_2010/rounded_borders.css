@@ -1,0 +1,54 @@
+
+/* rounded borders */
+.t-edge, .b-edge, .l-edge, .r-edge, .wrap-corner {
+  position: relative;
+  /* hasLayout -1 ? For IE only */
+  zoom: 1;
+}
+.rounded_border .t-edge {
+  background: url(../images/rounded_borders/shadow_t.png) repeat-x 0 top;
+  font-size: 1px;
+}
+.rounded_border .b-edge {
+  background: url(../images/rounded_borders/shadow_b.png) repeat-x 0 bottom;
+  font-size: 1px;
+}
+.rounded_border .l-edge {
+  background: url(../images/rounded_borders/shadow_l.png) repeat-y 0 0;
+}
+.rounded_border .r-edge {
+  background: url(../images/rounded_borders/shadow_r.png) repeat-y right 0;
+}
+.rounded_border .wrap-corner {
+  background: #fff !important;
+}
+.rounded_border .wrap-corner .t-edge, .rounded_border .wrap-corner .b-edge {
+  height: 11px;
+}
+.rounded_border .wrap-corner .l, .rounded_border .wrap-corner .r {
+  position: absolute;
+  top: 0;
+  height: 11px;
+  width: 11px;
+  background-image: url(../images/rounded_borders/corner_bits.png);
+}
+.rounded_border .wrap-corner .l {
+  left: 0;
+}
+.rounded_border .wrap-corner .r {
+  right: 0;
+  background-position: -11px 0;
+}
+.rounded_border .wrap-corner .b-edge .l {
+  background-position: 0 -11px;
+}
+.rounded_border .wrap-corner .b-edge .r {
+  background-position: -11px -11px;
+}
+.rounded_border .wrap-corner .r-edge {
+  padding: 5px 24px;
+}
+.rounded_border div.admin-links {
+  margin-top: -14px;
+  margin-left: -12px;
+}

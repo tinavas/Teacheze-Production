@@ -1,0 +1,4 @@
+filename = 10.11.2011
+description = "Permissions folly"
+modules = webform block color contact dblog filter help locale menu node profile search system taxonomy translation trigger update upload user admin_menu captcha image_captcha content content_copy content_permissions number optionwidgets text ckeditor date date_api date_locale date_popup date_timezone date_tools demo i18nblocks i18ncck i18ncontent i18nmenu i18nprofile jquery_ui languageicons lang_dropdown logintoboggan login_destination menu_block onepageprofile profile_category_weight profile_role tokenSTARTER token_actions ulearn user_selectable_roles vconf date_repeat xmlsitemap profileplus i18ntaxonomy fieldgroup i18n i18nstrings token custom_search_blocks custom_search i18nsync custom_search_taxonomy custom_search_i18n
+version = 1.1

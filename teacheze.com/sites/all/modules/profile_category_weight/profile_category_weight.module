@@ -1,0 +1,130 @@
+<?php
+// $Id: profile_category_weight.module,v 1.1.4.2 2009/05/06 20:47:16 hanoii Exp $
+
+function _profile_category_weight_form_id($category) {
+  $category = str_replace(' ', '_', $category);
+  return $category;
+}
+
+function _profile_category_weight_categories() {
+  $categories_weight = variable_get('profile_category_weight_categories', array());
+  $categories = array('account' => $categories_weight['account']);
+ // get them from the profile module
+  $data = profile_categories();
+  foreach ($data as $categ) {
+    $categories[$categ['name']] = $categories_weight[$categ['name']];
+  }
+  // Add any other that might come from another module for tweaking
+  // the registration weights
+  $extra = _user_forms($null, NULL, NULL, 'register');
+  if (is_array($extra) && count($extra) > 0) {
+    foreach ($extra as $categ => $categ_form) {
+      $categories[$categ] = $categories_weight[$categ];
+    }
+  }
+
+  asort($categories);
+  return $categories;
+}
+
+function profile_category_weight_menu() {
+  $items = array();
+  $items['admin/settings/profile_category_weight'] = array (
+    'title' => 'Profile Category Weight',
+    'description' => 'Assign weight to profile categories.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('profile_category_weight_settings'),
+    'access arguments' => array('administer site configuration')
+  );
+  return $items;
+}
+
+function profile_category_weight_settings_submit($form_id, &$form_state) {
+  $op = isset($form_state['values']['op']) ? $form_state['values']['op'] : '';
+
+  if ($op == t('Reset to defaults')) {
+    variable_del('profile_category_weight_categories');
+  }
+  else {
+    $categories_values = array();
+    $categories = _profile_category_weight_categories();
+    foreach ( $categories as $category => $weight ) {
+      $category_form_id = _profile_category_weight_form_id($category);
+      $categories_values[$category] = $form_state['values'][$category_form_id];
+    }
+    variable_set('profile_category_weight_categories', $categories_values);
+  }
+
+  if ($op == t('Reset to defaults')) {
+    drupal_set_message(t('The configuration options have been reset to their default values.'));
+  }
+  else {
+    drupal_set_message(t('The configuration options have been saved.'));
+  }
+
+  menu_rebuild();
+}
+
+/*function profile_category_weight_settings_validate($form, &$form_state) {
+  return TRUE;
+}
+*/
+
+function profile_category_weight_settings() {
+  $categories = _profile_category_weight_categories();
+  foreach ($categories as $category => $weight) {
+    $category_form_id = _profile_category_weight_form_id($category);
+    $form[$category_form_id] = array(
+        '#type' => 'weight',
+        '#title' => $category,
+        '#default_value' => is_numeric($weight) ? $weight : 0,
+      );
+  }
+
+  $form = system_settings_form($form);
+  $form['#submit'] = array('profile_category_weight_settings_submit');
+  //$form['#validate'][] = 'profile_category_weight_settings_validate';
+  $form['#theme'] = 'profile_category_weight_settings';
+  return $form;
+}
+
+function profile_category_weight_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'user_register') {
+    $categories = _profile_category_weight_categories();
+    foreach ($categories as $category => $weight) {
+      if ( is_numeric($weight) ) {
+        $form[$category]['#weight'] = $weight;
+      }
+    }
+  }
+}
+
+function profile_category_weight_menu_alter(&$items) {
+  $categories_weight = _profile_category_weight_categories();
+  if (is_array($items['user/%user_category/edit/account']) && is_numeric($categories_weight['account'])) {
+    $items['user/%user_category/edit/account']['weight'] = $categories_weight['account'];
+    //print_r($items['user/%user_category/edit']);
+  }
+  $empty_account = new stdClass();
+  if (($categories = _user_categories($empty_account)) && (count($categories) > 1)) {
+    foreach ($categories as $key => $category) {
+      // 'account' is already handled by the MENU_DEFAULT_LOCAL_TASK.
+      if ($category['name'] != 'account') {
+        if (is_array($items['user/%user_category/edit/'. $category['name']])) {
+          if ( is_numeric($categories_weight[$category['name']]) ) {
+            $items['user/%user_category/edit/'. $category['name']]['weight'] = $categories_weight[$category['name']];
+          }
+        }
+      }
+    }
+  }
+}
+
+function profile_category_weight_profile_alter(&$account) {
+  $weights = _profile_category_weight_categories();
+  foreach ($account->content as $name => $category) {
+    if (isset($weights[$name])) {
+      $account->content[$name]['#weight'] = $weights[$name];
+    }
+  }
+}
