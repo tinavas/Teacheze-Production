@@ -1,0 +1,4 @@
+; $Id: bribeart.info,v 1.1 2010/11/23 08:47:59 administrator Exp $
+name = Bribeart
+description = This module will allow users to upload pictures to the site, and admin can manage the listing of pcitures from admin panel, users can also comment on each picture.
+core = 6.x

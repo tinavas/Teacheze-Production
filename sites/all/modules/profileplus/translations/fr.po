@@ -1,0 +1,52 @@
+# $Id: fr.po,v 1.1.2.1 2010/08/11 06:35:55 jamesmarks Exp $
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  profileplus.module: n/a
+#  profileplus.info,v 1.2.2.1 2008/04/28 03:44:53 incrn8
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ProfilePlus\n"
+"POT-Creation-Date: 2008-04-28 16:13+0200\n"
+"PO-Revision-Date: 2009-04-10 17:34+0100\n"
+"Last-Translator: Frédéric G. MARAND <fgm@osinet.fr>\n"
+"Language-Team: OSInet <support@osinet.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: profileplus.module:20
+msgid "Makes user profiles searchable"
+msgstr "Permet la recherche dans les champs de profil"
+
+#: profileplus.module:40
+msgid "User Profiles"
+msgstr "Profils d'utilisateurs"
+
+# Ecran des droits d'accès
+#: profileplus.module:29
+msgid "search user profiles"
+msgstr "rechercher dans les profils d'utilisateurs"
+
+#: profileplus.module:0
+msgid "profileplus"
+msgstr "profileplus"
+
+#: profileplus.info:0
+msgid "ProfilePlus"
+msgstr "ProfilePlus"
+
+#: profileplus.info:0
+msgid "Search usernames and custom user profile fields."
+msgstr "Permet la recherche combinée dans les noms d'utilisateurs et les champs de profil personnalisés."
+
+#: profileplus.info:0
+msgid "Other"
+msgstr "Autres"
+

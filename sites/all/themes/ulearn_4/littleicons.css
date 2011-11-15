@@ -1,0 +1,12 @@
+
+/* rounded borders */
+.t-edge, .b-edge, .l-edge, .r-edge, .wrap-corner {
+  position: relative;
+  /* hasLayout -1 ? For IE only */
+  zoom: 1;
+}
+
+.rounded_border_float  div.admin-links {
+  margin-top: -14px;
+  margin-left: -12px;
+}

@@ -1,0 +1,14 @@
+.camel_later
+{
+	text-transform:capitalize;
+}
+
+.published_row
+{
+	background:#edffd5!important;
+}
+
+.unpublished_row
+{
+	background:#ffe1d5!important;
+}

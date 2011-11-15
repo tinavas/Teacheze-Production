@@ -1,0 +1,2 @@
+$db_url = 'mysql://u1124695_admin:Pa22w0rd@mysql804int.cp.blacknight.com/db1124695_newtfl'; 
+$db_url = 'mysql://u1148097_dubhub:Pa22w0rd@mysql1014.cp.blacknight.com/db1148097_dubhub';
