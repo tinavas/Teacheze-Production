@@ -1,6 +1,0 @@
-; $Id: coursebooking.info,v 1.6 2010/01/21 13:11:10 vectoroc Exp $
-name= Coursebooking
-description = Allows users to book course online
-core = 6.x
-php = 5.2
-core = "6.x"

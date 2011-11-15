@@ -1,6 +1,0 @@
-; $Id$ ulearn.info, v1.0 2010/17/14 12:52:23 Nanda Kishore Exp $
-name = ULearn
-description = This module is for an Online Learning Market Place for Students with help of Teachers.
-core = 6.x		
-package = "Custom ULearn Module"
-version = "6.x-1.0"

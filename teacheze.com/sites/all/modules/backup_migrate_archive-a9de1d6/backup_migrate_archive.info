@@ -1,5 +1,0 @@
-; $Id$
-name = Backup and Migrate Archive
-description = "Add file site archive support to backup and migrate."
-dependencies[] = backup_migrate
-core = 6.x

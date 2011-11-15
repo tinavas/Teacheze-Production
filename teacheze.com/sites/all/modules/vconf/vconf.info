@@ -1,8 +1,0 @@
-; $Id$
-name = Video Conference
-description = Video Conference integration module, manages instant video conference rooms.<BR>More details, requirements, installation and usage instructions, latest updates on <a href="http://www.videowhisper.com/?p=Drupal+Video+Conference+Module" target="_blank">VideoWhisper.com</a>.
-core = 6.x
-
-package = "VIDEOWHISPER"
-
-version = "6.x-2.0"

@@ -1,6 +1,0 @@
-<?php
-// $Id: profile_category_weight.install,v 1.1 2008/09/05 21:17:04 hanoii Exp $
-
-function profile_category_weight_uninstall() {
-  variable_del('profile_category_weight_categories');
-}

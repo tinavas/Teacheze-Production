@@ -1,1 +1,0 @@
-<?php art_vmenu_output($block->subject, $block->content); ?>
